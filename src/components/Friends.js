@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import FriendsList from './FriendsList';
 import { createFragmentContainer, graphql } from 'react-relay';
 
 class Friends extends Component {
