@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import Friend from './Friend';
 import { createFragmentContainer, graphql } from 'react-relay';
 
