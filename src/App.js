@@ -25,7 +25,7 @@ function fetchQuery(operation, variables) {
 const modernEnvironment = new Environment({
   network: Network.create(fetchQuery),
   store: new Store(new RecordSource()),
-});
+})
 
 const mountNode = document.getElementById('root');
 
