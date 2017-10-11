@@ -3,7 +3,7 @@ import graphqlHTTP from 'express-graphql';
 import path from 'path';
 import webpack from 'webpack';
 import WebPackDevServer from 'webpack-dev-server';
-import { schema } from './data/database';
+import { schema } from './data/schema';
 
 const APP_PORT = 3000;
 const GRAPHQL_PORT = 8080;
@@ -24,7 +24,7 @@ const compiler = webpack({
   module: {
     loaders: [
       {
-        exclude: /node_modules,
+        exclude: /node_modules/,
         loader: 'babel-loader',
         test: /\.js$/,
       },
@@ -41,4 +41,4 @@ const app = new WebPackDevServer(compiler, {
 });
 
 app.use('/', express.static(path.resolve(__dirname, 'public')));
-app.listen(APP_PORT, () => console.log(`App is now running on localhost:${APPL_PORT}`));
+app.listen(APP_PORT, () => console.log(`App is now running on localhost:${APP_PORT}`));
