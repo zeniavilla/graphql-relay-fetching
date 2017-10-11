@@ -6,7 +6,7 @@ import { Environment, Network, RecordSource, Store } from 'relay-runtime';
 import Friends from './components/Friends';
 
 // Network layer
-function fetchQuery( operation, variables) {
+function fetchQuery(operation, variables) {
   return fetch('/graphql', {
     method: 'POST',
     headers: {
@@ -20,6 +20,12 @@ function fetchQuery( operation, variables) {
     return response.json()
   });
 }
+
+// Relay environment
+const modernEnvironment = new Environment({
+  network: Network.create(fetchQuery),
+  store: new Store(new RecordSource()),
+});
 
 const mountNode = document.getElementById('root');
 
